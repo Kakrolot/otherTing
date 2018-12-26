@@ -1,0 +1,212 @@
+*{ /*此处的*表示找到页面中的所有元素，设置margin:0和padding:0是为了去掉浏览器默认的内外边距*/
+	margin:0;
+	padding:0;
+}
+.nav{ /*此处表示的是找到class值为nav的元素*/
+	background-color:gray;/*设置背景色为灰色*/
+}
+.content{
+	width:1000px;/*设置宽*/
+	height:60px;/*设置高*/
+	/*border:1px solid red;*//*设置边框*/
+	margin:auto;/*margin用于设置外边距，取值为auto时，该元素会水平居中*/
+}
+.nav img{
+	height:50px;
+	margin-top:5px;/*距离父元素上边框的距离*/
+}
+.nav .links{
+	/*border:1px solid red;*/
+	float:right;/*浮动定位，此时效果是将元素浮动到父元素的右侧*/
+}
+/*
+
+行内元素：不主动换行，不能设置宽和高
+行内块级元素：不主动换行，可以设置宽和高
+块级元素：独占一行，可以设置宽和高
+
+*/
+.nav .links a{
+	display:inline-block;/*将元素改变为行内块级元素，以便设置宽和高*/
+	width:60px;
+	height:58px;
+	/*border:1px solid blue;*/
+	text-align: center;/*设置文本水平居中*/
+	line-height: 58px;/*设置行高，当行高与高的取值一致时，单行文本会垂直居中*/
+	color:white;/*设置文本颜色*/
+	text-decoration: none;/*去掉a元素默认的下划线*/
+	margin:0px 10px;/*此处设置的两个值，第一个值表示上下外边距，第二个值表示左右外边距*/
+	border-bottom:2px solid transparent;/*设置下边框，transparent表示透明色*/
+}
+.nav .links .active,.nav .links a:hover{/*:hover是一个伪类选择器，表示当鼠标悬停在元素上时触发*/
+	border-bottom:2px solid orange;/*设置下边框*/
+}
+
+.section .banner img{
+	display:block;
+	width:100%;
+	min-width: 1000px;/*设置最小宽度*/
+}
+.section .skills{
+	height:400px;
+	background-image: url(./imgs/bg.png);/*设置背景图片*/
+	background-size:100%;/*设置背景图的尺寸*/
+	padding:30px 0px;/*设置元素的内边距*/
+}
+.section .skills h2{
+	text-align: center;
+	color:white;
+	font-size:40px;/*设置字号大小*/
+}
+.section .skills h2 span{
+	color:rgb(40,172,153);
+}
+
+.section .skills .items{
+	width:1000px;
+	margin:100px auto 0px;/*设置三个值时，第一个值表示上外边距，第二个值表示左右外边距，第三个值表示下外边距*/
+}
+.section .skills .item{
+	width:200px;
+	height:200px;
+	background-color: white;
+	float:left;
+	margin:0px 66.66px;
+	position:relative;/*相对定位，此处是让其子元素相对于该元素进行定位*/
+	border-radius: 5px 5px 0px 0px;
+}
+.section .skills .item .imgBox{
+	width:100px;
+	height:100px;
+	background-color: rgb(188,210,208);
+	background-repeat: no-repeat;/*默认背景图片是平铺的，设置no-repeat表示不平铺。（repeat-x,repeat-y）*/
+	background-position: center;/*设置背景图片的位置*/
+	position:absolute;/*绝对定位*/
+	left:48px;
+	top:-48px;
+	border:2px solid white;
+	border-radius: 50px 0px;
+	/*设置边框圆角，设置一个值的时候，四个角同时应用这个值；
+	当设置两个值的时候，第一个值表示左上和右下，第二个值表示右上和左下；
+	当设置三个值的时候，第一个值表示左上，第二个值表示右上和左下，第三个值表示右下；
+	当设置四个值的时候，从左上角开始，顺时针设置四个角
+	*/
+	transition:all 1s;/*设置过渡效果，让样式在一定时间内平滑过渡*/
+}
+.section .skills .item:hover .imgBox{
+	border-radius: 50px;
+	border:2px solid orange;
+}
+
+
+.section .skills .item .html{
+	background-image: url(./imgs/icon3.png);
+}
+.section .skills .item .css{
+	background-image: url(./imgs/icon2.png);
+}
+.section .skills .item .js{
+	background-image: url(./imgs/icon1.png);
+}
+.section .skills .item h4{
+	padding-top:60px;
+	text-align: center;
+}
+.section .skills .item p{
+	text-align: center;
+	font-size:14px;
+}
+.section .skills .item .footer{
+	width:100%;
+	height:5px;
+	background-color: orange;
+	text-align: center;
+	line-height: 40px;
+	color:white;
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	overflow:hidden;/*溢出隐藏*/
+	transition:all 1s;
+}
+.section .skills .item:hover .footer{
+	height:40px;
+}
+
+
+.section .others .center{
+	width: 1000px;
+	margin: auto;
+	padding: 30px 0px;
+}
+.section .others .center h2{
+	text-align: center;
+	font-size: 40px;
+}
+.section .others .center h2 span{
+	color: rgb(40,172,153);
+}
+.section .others .items{
+	overflow: hidden;
+	margin-top: 30px;
+}
+.section .others .item{
+	width: 50%;
+	float: left;
+}
+.section .others .item h4{
+	text-align: center;
+}
+.section .others .item ul{
+	width: 100%;
+	list-style-type: none;
+}
+.section .others .item li{
+	width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	background-color: orange;
+	text-align: center;
+	line-height: 40px;
+	color: white;
+	border-radius: 5px;
+	font-weight: bold;
+}
+.section .others .item li:hover{
+	width: 80%;
+
+}
+#foot{
+	background-color: rgb(91,84,89);
+	padding: 30px 0px;
+}
+#foot .center{
+	width: 1000px;
+	margin: auto;
+}
+#foot *{
+	color: rgb(195,195,195);
+}
+#foot a{
+	text-decoration: none;
+}
+#foot a:hover{
+	text-decoration: underline;
+}
+#foot .friends{
+	border-bottom: 1px solid rgb(195,195,195);
+	padding-bottom: 20px;
+}
+#foot p{
+	margin-top: 30px;
+	line-height: 30px;
+}
+.snow-canvas {
+		display: block;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		position: fixed;
+		pointer-events: none;
+	}
